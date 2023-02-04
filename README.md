@@ -4,8 +4,8 @@ Quizzes project from Pixel
 
 ## Components
 
-- Heading
-- TextComponent
+- Heading ok
+- TextComponent ok
 - Button
 - Input
 - Nav
