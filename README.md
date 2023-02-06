@@ -6,8 +6,9 @@ Quizzes project from Pixel
 
 - Heading ok
 - TextComponent ok
-- Button
-- Input
+- Button ok
+- Input (search, e-mail and text inputs) ok
+- PasswordInput ok
 - Nav
 - QuizCard
 - QuizOption
