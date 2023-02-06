@@ -9,10 +9,11 @@ Quizzes project from Pixel
 - Button ok
 - Input (search, e-mail and text inputs) ok
 - PasswordInput ok
-- Nav
+- QuizNotFound ok
+- QuizDifficulty ok
+- QuizOption ...
 - QuizCard
-- QuizOption
-- QuizNotFound
+- Nav
 
 ## Templates
 

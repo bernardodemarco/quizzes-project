@@ -42,6 +42,7 @@ describe('<TextComponent />', () => {
         font-size: 1.4rem;
         font-weight: 500;
         color: #3C3A36;
+        text-align: center;
       }
 
       <p
