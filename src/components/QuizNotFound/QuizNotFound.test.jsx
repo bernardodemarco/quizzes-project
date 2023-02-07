@@ -25,12 +25,14 @@ describe('<QuizNotFound />', () => {
         font-weight: 400;
         color: #78746D;
         text-align: center;
+        line-height: 2.1rem;
       }
 
       .c3 {
         color: #3C3A36;
         font-size: 2rem;
         font-weight: 500;
+        line-height: 2.6rem;
       }
 
       .c0 {
@@ -55,7 +57,6 @@ describe('<QuizNotFound />', () => {
 
       .c0 .c4 {
         max-width: 65%;
-        line-height: 2rem;
       }
 
       .c1 {

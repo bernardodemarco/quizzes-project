@@ -11,9 +11,12 @@ Quizzes project from Pixel
 - PasswordInput ok
 - QuizNotFound ok
 - QuizDifficulty ok
-- QuizOption ...
-- QuizCard
+- QuizCard ...
+- QuizzesContainer
+- QuizOption
 - Nav
+- ReturnButton
+- RequireAuth
 
 ## Templates
 
@@ -25,3 +28,8 @@ Quizzes project from Pixel
 - QuizQuestion
 - QuizResults
 - QuizHistory
+
+## Contexts
+
+- UserProvider
+- QuizzesProvider

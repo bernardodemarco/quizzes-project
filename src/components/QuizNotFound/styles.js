@@ -17,7 +17,6 @@ export const Container = styled.div`
 
     & ${TextStyles} {
       max-width: 65%;
-      line-height: 2rem;
     }
   `}
 `;

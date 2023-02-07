@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <h1>Hey there!</h1>
+      <h1>Hey there</h1>
     </ThemeProvider>
   </React.StrictMode>,
 );

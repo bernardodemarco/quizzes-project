@@ -11,10 +11,15 @@ export const QuizNotFound = ({ title, description }) => {
         src="assets/images/not-found-image.svg"
         alt="No quizzes have been found image"
       />
-      <Heading fontSize="xSmall" fontWeight="normal" as="h2">
+      <Heading
+        fontSize="xSmall"
+        fontWeight="normal"
+        as="h2"
+        lineHeight="2.6rem"
+      >
         {title}
       </Heading>
-      <TextComponent fontWeight="light" color="darkGray">
+      <TextComponent fontWeight="light" color="darkGray" lineHeight="2.1rem">
         {description}
       </TextComponent>
     </Styled.Container>

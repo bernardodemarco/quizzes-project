@@ -11,7 +11,7 @@ const colors = theme.colors;
 describe('<Heading />', () => {
   it('should render <Heading /> correctly when the props are passed in to it.', () => {
     renderThemeProvider(
-      <Heading as="h4" fontSize="large" fontWeight="normal">
+      <Heading as="h4" fontSize="large" fontWeight="normal" lineHeight="10px">
         Hey there!
       </Heading>,
     );
@@ -20,6 +20,7 @@ describe('<Heading />', () => {
       color: colors.dark,
       'font-size': fontSizes.large,
       'font-weight': fontWeights.normal,
+      'line-height': '10px',
     });
     expect(heading.tagName.toLowerCase()).toBe('h4');
   });
@@ -41,6 +42,7 @@ describe('<Heading />', () => {
         color: #3C3A36;
         font-size: 3.2rem;
         font-weight: 700;
+        line-height: normal;
       }
 
       <h1

@@ -6,9 +6,15 @@ export const Heading = ({
   as = 'h1',
   fontSize = 'medium',
   fontWeight = 'bold',
+  lineHeight = 'normal',
 }) => {
   return (
-    <Styled.Heading as={as} fontSize={fontSize} fontWeight={fontWeight}>
+    <Styled.Heading
+      as={as}
+      fontSize={fontSize}
+      fontWeight={fontWeight}
+      lineHeight={lineHeight}
+    >
       {children}
     </Styled.Heading>
   );
@@ -19,4 +25,5 @@ Heading.propTypes = {
   as: P.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
   fontSize: P.oneOf(['xSmall', 'small', 'medium', 'large', 'xLarge']),
   fontWeight: P.oneOf(['light', 'normal', 'bold']),
+  lineHeight: P.string,
 };

@@ -15,5 +15,6 @@ export const Label = styled.span`
     text-transform: uppercase;
     font-size: ${theme.fonts.fontSizes.paragraphs.medium};
     font-weight: ${theme.fonts.fontWeights.normal};
+    line-height: 1.6rem;
   `}
 `;

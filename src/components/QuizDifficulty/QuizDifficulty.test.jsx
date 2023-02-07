@@ -26,6 +26,7 @@ describe('<QuizDifficulty />', () => {
         text-transform: uppercase;
         font-size: 1.4rem;
         font-weight: 500;
+        line-height: 1.6rem;
       }
 
       <span

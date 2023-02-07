@@ -11,7 +11,12 @@ const colors = theme.colors;
 describe('<TextComponent />', () => {
   it('should render <TextComponent /> correctly when passing in props', () => {
     renderThemeProvider(
-      <TextComponent fontSize="large" fontWeight="bold" color="success">
+      <TextComponent
+        fontSize="large"
+        fontWeight="bold"
+        color="success"
+        lineHeight="5px"
+      >
         Testing
       </TextComponent>,
     );
@@ -20,6 +25,7 @@ describe('<TextComponent />', () => {
       'font-size': fontSizes.large,
       'font-weight': fontWeights.bold,
       color: colors.success,
+      'line-height': '5px',
     });
   });
 
@@ -43,6 +49,7 @@ describe('<TextComponent />', () => {
         font-weight: 500;
         color: #3C3A36;
         text-align: center;
+        line-height: normal;
       }
 
       <p

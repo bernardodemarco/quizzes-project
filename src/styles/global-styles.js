@@ -16,4 +16,19 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 1.6rem;
     font-family: 'Rubik', sans-serif;
   }
+
+  input {
+    outline: none;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  // remove "X" icon from search input
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
 `;

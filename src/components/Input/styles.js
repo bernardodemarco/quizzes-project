@@ -16,6 +16,7 @@ export const Container = styled.div`
 
 export const Input = styled.input`
   ${({ theme }) => css`
+    width: 75%;
     border: none;
     font-family: inherit;
     font-weight: ${theme.fonts.fontWeights.light};
@@ -25,7 +26,7 @@ export const Input = styled.input`
 `;
 
 export const Icon = styled.img`
-  ${({ hover }) => css`
+  ${({ hover = false }) => css`
     width: 3rem;
     height: 2.5rem;
 

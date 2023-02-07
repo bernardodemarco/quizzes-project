@@ -58,6 +58,7 @@ describe('<PasswordInput />', () => {
       }
 
       .c1 {
+        width: 75%;
         border: none;
         font-family: inherit;
         font-weight: 400;
