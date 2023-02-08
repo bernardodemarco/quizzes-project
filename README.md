@@ -11,11 +11,12 @@ Quizzes project from Pixel
 - PasswordInput ok
 - QuizNotFound ok
 - QuizDifficulty ok
-- QuizCard ...
-- QuizzesContainer
+- QuizCard ok
+- PageContainer (...)
+- QuizzesContainer (next)
 - QuizOption
 - Nav
-- ReturnButton
+- ReturnButton (dunno if it'll be needed)
 - RequireAuth
 
 ## Templates
