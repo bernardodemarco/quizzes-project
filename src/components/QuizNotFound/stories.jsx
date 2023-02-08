@@ -1,4 +1,5 @@
 import { QuizNotFound } from '.';
+import { PageContainer } from './../PageContainer';
 
 export default {
   title: 'QuizNotFound',
@@ -15,14 +16,7 @@ export default {
 };
 
 export const Template = (args) => (
-  <div
-    style={{
-      height: '100vh',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}
-  >
+  <PageContainer>
     <QuizNotFound {...args} />
-  </div>
+  </PageContainer>
 );
