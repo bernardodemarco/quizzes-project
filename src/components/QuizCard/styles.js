@@ -8,9 +8,25 @@ export const Container = styled.div`
     border-radius: 0.8rem;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
-    width: 100%;
+    width: 55.2rem;
     height: fit-content;
     background-color: ${theme.colors.white};
+
+    @media ${theme.media.largeDevices} {
+      width: 45rem;
+    }
+
+    @media ${theme.media.mediumDevices} {
+      width: 55.2rem;
+    }
+
+    @media ${theme.media.smallDevices} {
+      width: 90vw;
+
+      p {
+        text-align: start;
+      }
+    }
   `}
 `;
 

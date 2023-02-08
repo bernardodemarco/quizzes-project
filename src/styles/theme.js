@@ -37,4 +37,9 @@ export const theme = {
       bold: '700',
     },
   },
+  media: {
+    largeDevices: '(max-width: 1200px)',
+    mediumDevices: '(max-width: 974px)',
+    smallDevices: '(max-width: 575px)',
+  },
 };
