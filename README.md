@@ -15,8 +15,8 @@ Quizzes project from Pixel
 - PageContainer ok
 - QuizzesContainer ok
 - QuizQuestionOptions ok
-- Nav
-- ReturnButton (dunno if it'll be needed)
+- ReturnButton ok
+- Nav (...)
 - RequireAuth
 
 ## Templates
