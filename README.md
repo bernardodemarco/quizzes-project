@@ -16,7 +16,8 @@ Quizzes project from Pixel
 - QuizzesContainer ok
 - QuizQuestionOptions ok
 - ReturnButton ok
-- Nav (...)
+- HomeNav (ok, still need to make tests and the dropdown menu)
+- DropDown
 - RequireAuth
 
 ## Templates
