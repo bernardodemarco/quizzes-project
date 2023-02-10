@@ -85,7 +85,7 @@ export const MenuContainer = styled.div`
 
     @media (max-width: 785px) {
       & {
-        height: 100vh;
+        height: 100%;
         flex-direction: column;
         align-items: center;
         justify-content: center;

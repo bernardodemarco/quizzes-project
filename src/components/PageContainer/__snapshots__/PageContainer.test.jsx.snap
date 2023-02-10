@@ -3,7 +3,7 @@
 exports[`<PageContainer /> should render <PageContainer /> correctly and match snapshot 1`] = `
 .c0 {
   width: 100%;
-  max-width: 114.6rem;
+  max-width: 125rem;
   min-height: 100vh;
   margin: 0 auto;
   overflow-x: hidden;
