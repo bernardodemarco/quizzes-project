@@ -4,10 +4,10 @@ export default {
   title: 'HomeNav',
   component: HomeNav,
   args: {
-    userName: 'Joãozinho da Costa',
+    username: 'Joãozinho da Costa',
   },
   argTypes: {
-    userName: { type: 'string' },
+    username: { type: 'string' },
   },
 };
 

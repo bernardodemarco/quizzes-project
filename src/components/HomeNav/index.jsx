@@ -1,5 +1,6 @@
 import P from 'prop-types';
 import * as Styled from './styles';
+
 import { useState } from 'react';
 
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
@@ -9,24 +10,32 @@ import { PageContainer } from '../PageContainer';
 import { TextComponent } from '../TextComponent';
 import { Heading } from '../Heading';
 import { Input } from '../Input';
+import { Dropdown } from '../Dropdown';
 
-export const HomeNav = ({ userName }) => {
-  const [isVisible, setIsVisible] = useState(false);
+export const HomeNav = ({ username }) => {
+  const [isNavVisible, setIsNavVisible] = useState(false);
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
+  const onDropdownItemClick = (e) => {
+    console.log('clicked on dropdown item!');
+    !e.target.classList.contains('mobile-quiz-search') &&
+      setIsDropdownVisible(false);
+  };
 
   return (
     <>
       <Styled.Button
         aria-label="Open/Close menu"
         onClick={() => {
-          setIsVisible((prevIsVisible) => !prevIsVisible);
+          setIsNavVisible((prevIsVisible) => !prevIsVisible);
         }}
       >
-        {!isVisible && <MenuIcon aria-label="Open menu" />}
-        {!!isVisible && <CloseIcon aria-label="Close menu" />}
+        {!isNavVisible && <MenuIcon aria-label="Open menu" />}
+        {!!isNavVisible && <CloseIcon aria-label="Close menu" />}
       </Styled.Button>
       <Styled.Container
-        isVisible={isVisible}
-        onClick={() => setIsVisible(false)}
+        isVisible={isNavVisible}
+        onClick={() => setIsNavVisible(false)}
       >
         <PageContainer>
           <Styled.MenuContainer>
@@ -39,16 +48,46 @@ export const HomeNav = ({ userName }) => {
                 Olá,
               </TextComponent>
               <Heading fontSize="large" fontWeight="bold" lineHeight="4.2rem">
-                {userName}
+                {username}
               </Heading>
             </Styled.Logo>
-            <Styled.Nav>
+            <Styled.Nav aria-label="main menu">
+              <Dropdown
+                onDropdownItemClick={onDropdownItemClick}
+                isDropdownVisible={isDropdownVisible}
+              />
               <Styled.Link>Histórico</Styled.Link>
-              <Styled.Link className="dropdown-button">Temas</Styled.Link>
-              <Styled.Theme className="mobile-quiz-search">#HTML</Styled.Theme>
-              <Styled.Theme className="mobile-quiz-search">#UX</Styled.Theme>
-              <Styled.Theme className="mobile-quiz-search">#Swift</Styled.Theme>
-              <Styled.Theme className="mobile-quiz-search">#UI</Styled.Theme>
+              <Styled.Link
+                as="span"
+                className="dropdown-button"
+                onClick={() => setIsDropdownVisible((isVisible) => !isVisible)}
+              >
+                Temas
+              </Styled.Link>
+              <Styled.Theme
+                onClick={onDropdownItemClick}
+                className="mobile-quiz-search"
+              >
+                #HTML
+              </Styled.Theme>
+              <Styled.Theme
+                onClick={onDropdownItemClick}
+                className="mobile-quiz-search"
+              >
+                #UX
+              </Styled.Theme>
+              <Styled.Theme
+                onClick={onDropdownItemClick}
+                className="mobile-quiz-search"
+              >
+                #Swift
+              </Styled.Theme>
+              <Styled.Theme
+                onClick={onDropdownItemClick}
+                className="mobile-quiz-search"
+              >
+                #UI
+              </Styled.Theme>
               <Input placeholder="Pesquisar quiz" />
             </Styled.Nav>
           </Styled.MenuContainer>
@@ -59,5 +98,5 @@ export const HomeNav = ({ userName }) => {
 };
 
 HomeNav.propTypes = {
-  userName: P.string.isRequired,
+  username: P.string.isRequired,
 };

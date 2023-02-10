@@ -16,17 +16,22 @@ export const Dropdown = styled.ul`
     }
 
     position: absolute;
-    top: 3rem;
-    right: -4.5rem;
+    top: 10rem;
+    right: 38%;
 
     width: 14.5rem;
     height: 15.2rem;
 
     background-color: ${theme.colors.white};
     border-radius: 0.8rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 
     list-style: none;
+
+    @media (max-width: 785px) {
+      visibility: hidden;
+      opacity: 0;
+    }
   `}
 `;
 

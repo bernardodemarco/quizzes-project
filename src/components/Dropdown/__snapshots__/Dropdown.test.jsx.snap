@@ -9,13 +9,13 @@ exports[`<Dropdown /> should match snapshot 1`] = `
   visibility: visible;
   opacity: 1;
   position: absolute;
-  top: 3rem;
-  right: -4.5rem;
+  top: 10rem;
+  right: 38%;
   width: 14.5rem;
   height: 15.2rem;
   background-color: #FFFFFF;
   border-radius: 0.8rem;
-  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0,0,0,0.25);
   list-style: none;
 }
 
@@ -39,6 +39,13 @@ exports[`<Dropdown /> should match snapshot 1`] = `
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.8rem;
+}
+
+@media (max-width:785px) {
+  .c0 {
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 
 <ul

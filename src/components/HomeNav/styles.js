@@ -56,20 +56,18 @@ export const Container = styled.div`
     }
 
     @media (max-width: 785px) {
-      & {
-        height: 100vh;
-        bottom: 0;
-        border-bottom: none;
+      height: 100vh;
+      bottom: 0;
+      border-bottom: none;
 
-        visibility: hidden;
-        opacity: 0;
-        ${
-          isVisible &&
-          css`
-          visibility: visible;
-          opacity: 1;
-        `
-        }
+      visibility: hidden;
+      opacity: 0;
+      ${
+        isVisible &&
+        css`
+        visibility: visible;
+        opacity: 1;
+      `
       }
     }
   `}
