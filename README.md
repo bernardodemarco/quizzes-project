@@ -18,21 +18,21 @@ Quizzes project from Pixel
 - ReturnButton ok
 - Dropdown ok
 - HomeNav ok
-- HistoryNav ...
-- RequireAuth
+- HistoryNav ok
+- RequireAuth (after AuthProvider, then go to login pages)
 
 ## Templates
 
-- Home
 - Login
 - SignUp
 - RecoverPassword
+- Home
+- QuizHistory
 - QuizDescription
 - QuizQuestion
 - QuizResults
-- QuizHistory
 
 ## Contexts
 
-- UserProvider
+- UserProvider (AuthProvider -> next)
 - QuizzesProvider

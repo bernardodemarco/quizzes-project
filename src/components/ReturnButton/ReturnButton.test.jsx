@@ -22,7 +22,7 @@ describe('<ReturnButton />', () => {
         position: fixed;
         top: 3.6rem;
         left: 7.5rem;
-        z-index: 1;
+        z-index: 2;
       }
 
       .c0:hover {
