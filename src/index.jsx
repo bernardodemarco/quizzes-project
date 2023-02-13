@@ -6,14 +6,22 @@ import ReactDOM from 'react-dom/client';
 import { GlobalStyles } from './styles/global-styles';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
-import { HomeNav } from './components/HomeNav';
+
+// react-router-dom
+import { routes } from './routes';
+import { RouterProvider } from 'react-router-dom';
+
+// components
+import { AuthProvider } from './contexts/AuthProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <HomeNav userName="gonca" />
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <RouterProvider router={routes} />
+      </ThemeProvider>
+    </AuthProvider>
   </React.StrictMode>,
 );

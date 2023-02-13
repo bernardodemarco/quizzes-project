@@ -1,8 +1,13 @@
 import P from 'prop-types';
-import { useState } from 'react';
 import * as Styled from './../Input/styles';
 
-export const PasswordInput = ({ placeholder }) => {
+import { useState } from 'react';
+import { forwardRef } from 'react';
+
+export const PasswordInput = forwardRef(function PasswordInput(
+  { placeholder },
+  ref,
+) {
   const [isVisible, setIsVisible] = useState(false);
   const handleIconClick = () => {
     setIsVisible((visible) => !visible);
@@ -11,6 +16,7 @@ export const PasswordInput = ({ placeholder }) => {
   return (
     <Styled.Container>
       <Styled.Input
+        ref={ref}
         placeholder={placeholder}
         type={isVisible ? 'text' : 'password'}
         required
@@ -27,7 +33,7 @@ export const PasswordInput = ({ placeholder }) => {
       />
     </Styled.Container>
   );
-};
+});
 
 PasswordInput.propTypes = {
   placeholder: P.node.isRequired,

@@ -7,6 +7,8 @@ export const Button = ({
   onClick,
   fontSize = 'medium',
   fontWeight = 'normal',
+  lineHeight = 'normal',
+  type = 'button',
 }) => {
   return (
     <Styled.Button
@@ -14,6 +16,8 @@ export const Button = ({
       onClick={onClick}
       fontSize={fontSize}
       fontWeight={fontWeight}
+      lineHeight={lineHeight}
+      type={type}
     >
       {children}
     </Styled.Button>
@@ -22,8 +26,10 @@ export const Button = ({
 
 Button.propTypes = {
   children: P.node.isRequired,
-  onClick: P.func.isRequired,
+  onClick: P.func,
   fontSize: P.oneOf(['small', 'medium', 'large']),
   fontWeight: P.oneOf(['light', 'normal', 'bold']),
   background: P.bool,
+  lineHeight: P.string,
+  type: P.oneOf(['button', 'submit']),
 };

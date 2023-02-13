@@ -21,13 +21,6 @@ exports[`<HistoryNav /> should match snapshot 1`] = `
   justify-content: center;
 }
 
-.c7 {
-  color: #3C3A36;
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 4.2rem;
-}
-
 .c2 {
   width: 4.8rem;
   height: 4.8rem;
@@ -44,6 +37,13 @@ exports[`<HistoryNav /> should match snapshot 1`] = `
 .c3 {
   width: 100%;
   height: 100%;
+}
+
+.c7 {
+  color: #3C3A36;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4.2rem;
 }
 
 .c0 {

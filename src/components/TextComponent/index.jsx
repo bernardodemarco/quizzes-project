@@ -7,6 +7,7 @@ export const TextComponent = ({
   fontWeight = 'normal',
   color = 'dark',
   lineHeight = 'normal',
+  onClick,
 }) => {
   return (
     <Styled.Text
@@ -14,6 +15,7 @@ export const TextComponent = ({
       fontWeight={fontWeight}
       color={color}
       lineHeight={lineHeight}
+      onClick={onClick}
     >
       {children}
     </Styled.Text>
@@ -26,4 +28,5 @@ TextComponent.propTypes = {
   fontWeight: P.oneOf(['light', 'normal', 'bold']),
   color: P.oneOf(['darkGray', 'dark', 'success', 'error']),
   lineHeight: P.string,
+  onClick: P.func,
 };

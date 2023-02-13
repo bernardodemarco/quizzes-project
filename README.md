@@ -19,13 +19,13 @@ Quizzes project from Pixel
 - Dropdown ok
 - HomeNav ok
 - HistoryNav ok
-- RequireAuth (after AuthProvider, then go to login pages)
+- RequireAuth (add navigation logic)
 
 ## Templates
 
-- Login
-- SignUp
-- RecoverPassword
+- Login (...)
+- SignUp (...)
+- RecoverPassword (...)
 - Home
 - QuizHistory
 - QuizDescription
@@ -34,5 +34,9 @@ Quizzes project from Pixel
 
 ## Contexts
 
-- UserProvider (AuthProvider -> next)
+- AuthProvider ok
 - QuizzesProvider
+
+## Hooks
+
+- useAuthContext ok

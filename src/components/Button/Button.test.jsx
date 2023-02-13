@@ -22,6 +22,8 @@ describe('<Button />', () => {
         fontWeight="light"
         onClick={handleClick}
         background={false}
+        lineHeight="10px"
+        type="submit"
       >
         Click here
       </Button>,
@@ -36,12 +38,13 @@ describe('<Button />', () => {
       color: colors.dark,
       'font-size': btnFontSizes.small,
       'font-weight': fontWeights.light,
+      'line-height': '10px',
     });
+    expect(button).toHaveAttribute('type', 'submit');
   });
 
   it('should render <Button /> correctly with default props', () => {
-    const handleClick = jest.fn();
-    renderThemeProvider(<Button onClick={handleClick}>Click here</Button>);
+    renderThemeProvider(<Button>Click here</Button>);
     const button = screen.getByRole('button', { name: 'Click here' });
 
     expect(button).toHaveStyle({
@@ -50,6 +53,7 @@ describe('<Button />', () => {
       'font-size': btnFontSizes.medium,
       'font-weight': fontWeights.normal,
     });
+    expect(button).toHaveAttribute('type', 'button');
   });
 
   it('should match inline snapshot', () => {
@@ -63,8 +67,10 @@ describe('<Button />', () => {
         color: #FFFFFF;
         font-size: 1.6rem;
         font-weight: 500;
+        line-height: normal;
         font-family: inherit;
         width: 100%;
+        height: 5.6rem;
         text-align: center;
         border: none;
         border-radius: 1.6rem;
@@ -79,6 +85,7 @@ describe('<Button />', () => {
         class="c0"
         font-size="medium"
         font-weight="normal"
+        type="button"
       >
         Click here
       </button>
