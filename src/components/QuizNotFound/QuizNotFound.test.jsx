@@ -36,6 +36,7 @@ describe('<QuizNotFound />', () => {
       }
 
       .c0 {
+        margin-top: 12rem;
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;

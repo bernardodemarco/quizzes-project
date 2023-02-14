@@ -5,7 +5,7 @@ import { QuizCard } from './../QuizCard';
 
 export const QuizzesContainer = ({ quizzes }) => {
   return (
-    <Styled.Grid>
+    <Styled.Grid isAnswered={quizzes[0].isAnswered}>
       {quizzes.map((quiz) => {
         return (
           <QuizCard

@@ -1,7 +1,9 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+
+import { useNavigate } from 'react-router-dom';
 
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close';
@@ -12,14 +14,22 @@ import { Heading } from '../Heading';
 import { Input } from '../Input';
 import { Dropdown } from '../Dropdown';
 
-export const HomeNav = ({ username }) => {
+export const HomeNav = ({
+  username,
+  onSearchInputChange,
+  onDropdownItemClick,
+}) => {
+  const navigate = useNavigate();
+
+  const inputRef = useRef(null);
+
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
-  const onDropdownItemClick = (e) => {
-    console.log('clicked on dropdown item!');
-    !e.target.classList.contains('mobile-quiz-search') &&
-      setIsDropdownVisible(false);
+  const handleDropdownItemClick = (e) => {
+    const queryValue = e.target.innerText.slice(1);
+    onDropdownItemClick(queryValue);
+    inputRef.current.value = queryValue;
   };
 
   return (
@@ -35,7 +45,10 @@ export const HomeNav = ({ username }) => {
       </Styled.Button>
       <Styled.Container
         isVisible={isNavVisible}
-        onClick={() => setIsNavVisible(false)}
+        onClick={() => {
+          setIsNavVisible(false);
+          isDropdownVisible && setIsDropdownVisible(false);
+        }}
       >
         <PageContainer>
           <Styled.MenuContainer>
@@ -53,10 +66,12 @@ export const HomeNav = ({ username }) => {
             </Styled.Logo>
             <Styled.Nav aria-label="main menu">
               <Dropdown
-                onDropdownItemClick={onDropdownItemClick}
+                onDropdownItemClick={handleDropdownItemClick}
                 isDropdownVisible={isDropdownVisible}
               />
-              <Styled.Link>Histórico</Styled.Link>
+              <Styled.Link onClick={() => navigate('/history')}>
+                Histórico
+              </Styled.Link>
               <Styled.Link
                 as="span"
                 className="dropdown-button"
@@ -65,30 +80,34 @@ export const HomeNav = ({ username }) => {
                 Temas
               </Styled.Link>
               <Styled.Theme
-                onClick={onDropdownItemClick}
+                onClick={handleDropdownItemClick}
                 className="mobile-quiz-search"
               >
                 #HTML
               </Styled.Theme>
               <Styled.Theme
-                onClick={onDropdownItemClick}
+                onClick={handleDropdownItemClick}
                 className="mobile-quiz-search"
               >
                 #UX
               </Styled.Theme>
               <Styled.Theme
-                onClick={onDropdownItemClick}
+                onClick={handleDropdownItemClick}
                 className="mobile-quiz-search"
               >
                 #Swift
               </Styled.Theme>
               <Styled.Theme
-                onClick={onDropdownItemClick}
+                onClick={handleDropdownItemClick}
                 className="mobile-quiz-search"
               >
                 #UI
               </Styled.Theme>
-              <Input placeholder="Pesquisar quiz" />
+              <Input
+                onInputChange={onSearchInputChange}
+                placeholder="Pesquisar quiz"
+                ref={inputRef}
+              />
             </Styled.Nav>
           </Styled.MenuContainer>
         </PageContainer>
@@ -99,4 +118,6 @@ export const HomeNav = ({ username }) => {
 
 HomeNav.propTypes = {
   username: P.string.isRequired,
+  onSearchInputChange: P.func,
+  onDropdownItemClick: P.func,
 };

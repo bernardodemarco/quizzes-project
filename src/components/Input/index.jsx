@@ -10,12 +10,18 @@ const iconSrc = {
 };
 
 export const Input = forwardRef(function Input(
-  { placeholder, type = 'search' },
+  { placeholder, type = 'search', onInputChange },
   ref,
 ) {
   return (
     <Styled.Container>
-      <Styled.Input type={type} placeholder={placeholder} ref={ref} required />
+      <Styled.Input
+        onChange={onInputChange}
+        type={type}
+        placeholder={placeholder}
+        ref={ref}
+        required
+      />
       {<Styled.Icon src={iconSrc[type]} alt={`${type} input icon`} />}
     </Styled.Container>
   );
@@ -24,4 +30,5 @@ export const Input = forwardRef(function Input(
 Input.propTypes = {
   placeholder: P.node.isRequired,
   type: P.oneOf(['search', 'e-mail', 'text']),
+  onInputChange: P.func,
 };

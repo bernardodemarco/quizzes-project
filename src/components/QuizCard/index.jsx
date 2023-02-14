@@ -17,7 +17,7 @@ export const QuizCard = ({
   answeredDate,
 }) => {
   return (
-    <Styled.Container onClick={onClick}>
+    <Styled.Container onClick={onClick} isAnswered={isAnswered}>
       <Styled.Image imgSrc={imgSrc}>
         {!isAnswered && (
           <QuizDifficulty

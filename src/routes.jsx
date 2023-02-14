@@ -8,13 +8,23 @@ import { RequireAuth } from './components/RequireAuth';
 import { Login } from './templates/Login';
 import { SignUp } from './templates/SignUp';
 import { RecoverPassword } from './templates/RecoverPassword';
+import { Home } from './templates/Home';
+import { QuizHistory } from './templates/QuizHistory';
 
 export const routes = createBrowserRouter([
   {
     path: '/',
     element: (
       <RequireAuth>
-        <h1>Require Auth</h1>
+        <Home />
+      </RequireAuth>
+    ),
+  },
+  {
+    path: '/history',
+    element: (
+      <RequireAuth>
+        <QuizHistory />
       </RequireAuth>
     ),
   },

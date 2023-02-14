@@ -6,7 +6,8 @@ import { Heading } from './../Heading/styles';
 
 export const Nav = styled.nav`
   ${({ theme }) => css`
-    z-index: 1;
+    background-color: ${theme.colors.white};
+    z-index: 3;
     position: fixed;
     top: 0;
     right: 0;

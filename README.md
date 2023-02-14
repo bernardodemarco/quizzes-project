@@ -26,16 +26,16 @@ Quizzes project from Pixel
 - Login ok
 - SignUp ok
 - RecoverPassword ok
-- Home
-- QuizHistory
-- QuizDescription
-- QuizQuestion
-- QuizResults
+- Home ok + get data from API
+- QuizHistory ok + get data from API
+- QuizDescription (...)
+- QuizQuestion (...)
+- QuizResults (...)
 
 ## Contexts
 
 - AuthProvider ok
-- QuizzesProvider
+- QuizzesProvider (...)
 
 ## Hooks
 

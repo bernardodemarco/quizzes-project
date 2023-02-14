@@ -1,13 +1,18 @@
 import { fireEvent, screen } from '@testing-library/react';
 
 import { HomeNav } from '.';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { renderThemeProvider } from './../../styles/render-theme-provider';
 
 const username = 'username';
 
 describe('<HomeNav />', () => {
   it('should render <HomeNav /> correctly and when clicking in "Temas", <Dropdown /> should appear', () => {
-    renderThemeProvider(<HomeNav username={username} />);
+    renderThemeProvider(
+      <Router>
+        <HomeNav username={username} />
+      </Router>,
+    );
 
     expect(screen.getByRole('heading', { name: username })).toBeInTheDocument();
     expect(
@@ -28,13 +33,17 @@ describe('<HomeNav />', () => {
       visibility: 'visible',
     });
 
-    fireEvent.click(screen.queryByRole('list').firstChild);
+    fireEvent.click(screen.getByRole('list'));
 
     expect(screen.queryByRole('list')).not.toBeInTheDocument();
   });
 
   it('when using mobile devices, it should apply the styles accordingly', () => {
-    renderThemeProvider(<HomeNav username={username} />);
+    renderThemeProvider(
+      <Router>
+        <HomeNav username={username} />
+      </Router>,
+    );
 
     const button = screen.getByLabelText('Open/Close menu');
     expect(button).toHaveStyleRule('display', 'block', {
@@ -55,9 +64,7 @@ describe('<HomeNav />', () => {
     });
     expect(screen.getByLabelText('Close menu')).toBeInTheDocument();
 
-    const mobileSearchItem = screen.getAllByText('#UI')[1];
-
-    fireEvent.click(mobileSearchItem);
+    fireEvent.click(screen.getByRole('navigation'));
 
     expect(menuContainer).toHaveStyleRule('opacity', '0', {
       media: '(max-width: 785px)',
@@ -66,7 +73,11 @@ describe('<HomeNav />', () => {
   });
 
   it('should match snapshot', () => {
-    const { container } = renderThemeProvider(<HomeNav username={username} />);
+    const { container } = renderThemeProvider(
+      <Router>
+        <HomeNav username={username} />
+      </Router>,
+    );
     expect(container).toMatchSnapshot();
   });
 });

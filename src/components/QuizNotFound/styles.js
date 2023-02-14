@@ -5,6 +5,8 @@ import { Heading as HeadingStyles } from './../Heading/styles';
 
 export const Container = styled.div`
   ${() => css`
+    margin-top: 12rem;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,6 +19,10 @@ export const Container = styled.div`
 
     & ${TextStyles} {
       max-width: 65%;
+    }
+
+    @media (max-width: 785px) {
+      margin-top: 0;
     }
   `}
 `;

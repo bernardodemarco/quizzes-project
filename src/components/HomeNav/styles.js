@@ -34,11 +34,13 @@ export const Container = styled.div`
   ${({ theme, isVisible }) => css`
     height: 12rem;
 
-    z-index: 1;
+    z-index: 3;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+
+    background-color: ${theme.colors.white};
 
     border-bottom: 0.1rem solid ${theme.colors.gray};
 
