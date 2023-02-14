@@ -22,9 +22,7 @@ export const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-    login(email, password);
+    login(emailRef.current.value, passwordRef.current.value);
     navigate('/');
   };
 

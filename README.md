@@ -19,13 +19,13 @@ Quizzes project from Pixel
 - Dropdown ok
 - HomeNav ok
 - HistoryNav ok
-- RequireAuth (add navigation logic)
+- RequireAuth ok
 
 ## Templates
 
-- Login (...)
-- SignUp (...)
-- RecoverPassword (...)
+- Login ok
+- SignUp ok
+- RecoverPassword ok
 - Home
 - QuizHistory
 - QuizDescription

@@ -6,6 +6,7 @@ import { Navigate } from 'react-router-dom';
 
 export const RequireAuth = ({ children }) => {
   const { userData } = useAuthContext();
+  console.log('USER', userData);
 
   if (!userData.email) {
     return <Navigate to="/login" />;

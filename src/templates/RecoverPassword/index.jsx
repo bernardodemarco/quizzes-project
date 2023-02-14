@@ -9,6 +9,7 @@ import { Input } from './../../components/Input';
 
 export const RecoverPassword = () => {
   const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate('/login');
