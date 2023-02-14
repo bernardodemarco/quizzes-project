@@ -29,7 +29,7 @@ export const Nav = styled.nav`
       left: 14.7rem;
     }
 
-    @media ${theme.media.mediumDevices} {
+    @media (max-width: 660px) {
       ${ReturnButton} {
         left: 5rem;
       }

@@ -28,15 +28,16 @@ Quizzes project from Pixel
 - RecoverPassword ok
 - Home ok + get data from API
 - QuizHistory ok + get data from API
-- QuizDescription (...)
-- QuizQuestion (...)
+- QuizDescription ok + get data from API + integrate w/ quiz context
+- QuizQuestion finish styles and integration with quiz context
 - QuizResults (...)
 
 ## Contexts
 
 - AuthProvider ok
-- QuizzesProvider (...)
+- QuizzesProvider ok + get data from API
 
 ## Hooks
 
 - useAuthContext ok
+- useQuizDataContext ok

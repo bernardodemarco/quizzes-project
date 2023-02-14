@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const ImageContainer = styled.div`
-  ${() => css`
+  ${({ theme }) => css`
     width: 4.8rem;
     height: 4.8rem;
 
@@ -12,6 +12,14 @@ export const ImageContainer = styled.div`
 
     &:hover {
       cursor: pointer;
+    }
+
+    @media ${theme.media.mediumDevices} {
+      left: 5rem;
+    }
+
+    @media (max-width: 660px) {
+      left: 1rem;
     }
   `}
 `;

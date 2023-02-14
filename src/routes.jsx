@@ -10,6 +10,10 @@ import { SignUp } from './templates/SignUp';
 import { RecoverPassword } from './templates/RecoverPassword';
 import { Home } from './templates/Home';
 import { QuizHistory } from './templates/QuizHistory';
+import { QuizDescription } from './templates/QuizDescription';
+import { QuizQuestions } from './templates/QuizQuestions';
+
+import { QuizDataProvider } from './contexts/QuizDataProvider';
 
 export const routes = createBrowserRouter([
   {
@@ -39,5 +43,25 @@ export const routes = createBrowserRouter([
   {
     path: '/recover-password',
     element: <RecoverPassword />,
+  },
+  {
+    path: '/quizzes/:id',
+    element: (
+      <RequireAuth>
+        <QuizDataProvider>
+          <QuizDescription />
+        </QuizDataProvider>
+      </RequireAuth>
+    ),
+  },
+  {
+    path: '/quizzes/:id/questions',
+    element: (
+      <RequireAuth>
+        <QuizDataProvider>
+          <QuizQuestions />
+        </QuizDataProvider>
+      </RequireAuth>
+    ),
   },
 ]);
