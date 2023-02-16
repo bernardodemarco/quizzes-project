@@ -1,0 +1,38 @@
+{
+  "id": "224a68d0-d49a-4992-8b00-e93c0960d196",
+  "data": [
+    {
+      "id": "ebd8a80a-4ae0-4698-ade0-52aabc2eb98e",
+      "correct_answer_index": 1,
+      "question_text": "Pergunta de UI 01",
+      "banner_image": "https://img.freepik.com/fotos-gratis/a-paisagem-bonita-do-sol-da-praia-com-um-barco_1112-212.jpg?w=2000",
+      "answers": [
+        "Resposta 01",
+        "Resposta 02",
+        "Resposta 03"
+      ]
+    },
+    {
+      "id": "fe9d7f39-5641-43ac-bb48-85247c2044a5",
+      "correct_answer_index": 2,
+      "question_text": "Pergunta de UI 02",
+      "banner_image": "https://img.freepik.com/fotos-gratis/imagem-aproximada-em-tons-de-cinza-de-uma-aguia-careca-americana-em-um-fundo-escuro_181624-31795.jpg?w=2000",
+      "answers": [
+        "Resposta 01",
+        "Resposta 02",
+        "Resposta 03"
+      ]
+    },
+    {
+      "id": "ebb65485-5706-49dd-8a4a-b0da40c07d7f",
+      "correct_answer_index": 3,
+      "question_text": "Pergunta de UI 03",
+      "banner_image": "https://blog.emania.com.br/wp-content/uploads/2016/02/direitos-autorais-e-de-imagem.jpg",
+      "answers": [
+        "Resposta 01",
+        "Resposta 02",
+        "Resposta 03"
+      ]
+    }
+  ]
+}

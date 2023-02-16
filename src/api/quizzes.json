@@ -1,0 +1,44 @@
+[
+  {
+    "id": "224a68d0-d49a-4992-8b00-e93c0960d196",
+    "title": "UI",
+    "search": "ui",
+    "short_description": "Um quiz sobre UI que vai mudar sua vida!",
+    "description": "Esse quiz tem como objetivo testar os seus conhecimentos a respeito de UI. Será que você consegue acertar todas as questões? Mostre para seus amigos que você domina os conceitos de UI!!",
+    "date": "2022-06-21 18:52",
+    "banner_image": "https://sujeitoprogramador.com/wp-content/uploads/2020/12/uiDesign-1.png",
+    "questions_count": 3,
+    "difficulty": "easy",
+    "is_answered": true,
+    "answered_date": "2022-06-21 22:32",
+    "correct_answers_count": 1
+  },
+  {
+    "id": "95b93857-476d-450d-b9a7-0ef0bd6c2cc5",
+    "title": "Conceitos básicos de HTML",
+    "search": "html",
+    "short_description": "Um quiz sobre HTML que vai mudar sua vida!",
+    "description": "Esse quiz tem como objetivo testar os seus conhecimentos a respeito de HTML. Será que você consegue acertar todas as questões? Mostre para seus amigos que você domina os conceitos de HTML!!",
+    "date": "2022-06-19 14:32",
+    "banner_image": "https://www.hostinger.com.br/tutoriais/wp-content/uploads/sites/12/2018/07/Como-inserir-imagem-ou-logo-usando-HTML-no-seu-site-1.png",
+    "questions_count": 4,
+    "difficulty": "easy",
+    "is_answered": false,
+    "answered_date": null,
+    "correct_answers_count": null
+  },
+  {
+    "id": "e3a8c1c8-cdc8-4939-b2ac-ad682707937d",
+    "title": "HTML avançado",
+    "search": "html",
+    "short_description": "Conceitos avançados de HTML",
+    "description": "Aqui tem coisas muito avançadas de HTML! Será que você consegue responder?",
+    "date": "2022-06-20 15:32",
+    "banner_image": "https://marquesfernandes.com/wp-content/uploads/2020/04/florian-olivo-4hbJ-eymZ1o-unsplash.jpg",
+    "questions_count": 4,
+    "difficulty": "hard",
+    "is_answered": false,
+    "answered_date": null,
+    "correct_answers_count": null
+  }
+]

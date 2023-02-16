@@ -4,10 +4,11 @@ Quizzes project from Pixel
 
 ## Remaining tasks
 
-- Map API data
-- Get data from API
+- Map API data ok
+- Get data from API ...
 - Add loading component
 - Add padding to small devices
+- Format Date
 
 ## Components
 
