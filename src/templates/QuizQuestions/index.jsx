@@ -21,14 +21,14 @@ export const QuizQuestions = () => {
 
   useEffect(() => {
     let ignore = false;
-    actions.setQuestions().then((setQuestions) => {
+    actions.setQuestions(id).then((setQuestions) => {
       !ignore && setQuestions();
     });
 
     return () => {
       ignore = true;
     };
-  }, [actions]);
+  }, [actions, id]);
 
   useEffect(() => {
     if (!quizData.isActive) {
@@ -36,10 +36,8 @@ export const QuizQuestions = () => {
     }
   }, [quizData.isActive, navigate, id]);
 
-  if (!question && quizData.loading) {
+  if (!question) {
     return <h1>loading</h1>;
-  } else if (!question && !quizData.loading) {
-    return <h1>No questions were found :(</h1>;
   }
 
   return (

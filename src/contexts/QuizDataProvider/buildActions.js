@@ -1,6 +1,8 @@
 import * as actionTypes from './types';
 
-import fakeQuestions from './../../templates/QuizQuestions/mock';
+// import fakeQuestions from './../../templates/QuizQuestions/mock';
+import { axiosConfig } from '../../utils/axiosConfig';
+import { mapQuestions } from './../../api/mapQuestions';
 
 export const buildActions = (dispatch) => {
   return {
@@ -19,13 +21,16 @@ export const buildActions = (dispatch) => {
     incrementCorrectAnswers: () => {
       dispatch({ type: actionTypes.INCREMENT_CORRECT_ANSWERS });
     },
-    setQuestions: async () => {
+    setQuestions: async (id) => {
       dispatch({ type: actionTypes.LOADING_QUESTIONS });
+
+      const rawQuestions = await axiosConfig.get(`/questions/${id}`);
+      const questions = mapQuestions(rawQuestions.data.data);
 
       return () => {
         dispatch({
           type: actionTypes.SET_QUESTIONS,
-          payload: { questions: fakeQuestions },
+          payload: { questions: questions },
         });
       };
     },

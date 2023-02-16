@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.3.3",
     "jest-styled-components": "^7.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -79,6 +80,7 @@
       "!<rootDir>/**/stories.{js,jsx,ts,tsx}",
       "!<rootDir>/src/templates/**/*.{js,jsx,ts,tsx}",
       "!<rootDir>/src/contexts/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/src/utils/**/*.{js,jsx,ts,tsx}",
       "!<rootDir>/src/components/RequireAuth/*.{js,jsx,ts,tsx}",
       "!<rootDir>/src/hooks/*.{js,jsx,ts,tsx}",
       "!<rootDir>/node_modules/"

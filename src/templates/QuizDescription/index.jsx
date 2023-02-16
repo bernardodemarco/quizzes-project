@@ -13,7 +13,8 @@ import { QuizDifficulty } from './../../components/QuizDifficulty';
 import { TextComponent } from './../../components/TextComponent';
 import { Button } from './../../components/Button';
 
-import defaultQuiz from './mock';
+import { axiosConfig } from '../../utils/axiosConfig';
+import { mapQuiz } from '../../api/mapQuiz';
 
 export const QuizDescription = () => {
   const actions = useQuizDataContext()[1];
@@ -22,8 +23,25 @@ export const QuizDescription = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // eslint-disable-next-line
-  const [quiz, setQuiz] = useState(defaultQuiz);
+  const [quiz, setQuiz] = useState({});
+
+  useEffect(() => {
+    const loadQuiz = async () => {
+      try {
+        const rawQuiz = await axiosConfig.get(`/quizzes/${id}`);
+        !ignore && setQuiz(mapQuiz(rawQuiz.data));
+      } catch {
+        !ignore && setQuiz(null);
+      }
+    };
+
+    let ignore = false;
+    loadQuiz();
+
+    return () => {
+      ignore = true;
+    };
+  }, [id]);
 
   useEffect(() => {
     if (location.state === 'restartQuiz') {
@@ -32,11 +50,18 @@ export const QuizDescription = () => {
   }, [location, actions]);
 
   const handleButtonClick = () => {
-    // change here
     actions.activateQuiz();
-    actions.setNumOfQuestions(3);
+    actions.setNumOfQuestions(quiz.numOfQuestions);
     navigate(`/quizzes/${id}/questions`);
   };
+
+  if (quiz === null) {
+    return <h1>not found</h1>;
+  }
+
+  if (Object.keys(quiz).length === 0) {
+    return <h1>loading</h1>;
+  }
 
   return (
     <>
