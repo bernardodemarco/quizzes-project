@@ -7,9 +7,9 @@ Quizzes project from Pixel
 - Map API data ok
 - Get data from API ok
 - Add loading component ok
-- Add 404 Page ...
-- Add padding to small devices
+- Add 404 Page ok
 - Format Date
+- Add padding to small devices
 
 ## Components
 

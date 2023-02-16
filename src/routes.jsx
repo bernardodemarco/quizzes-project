@@ -16,6 +16,7 @@ import { QuizHistory } from './templates/QuizHistory';
 import { QuizDescription } from './templates/QuizDescription';
 import { QuizQuestions } from './templates/QuizQuestions';
 import { QuizResult } from './templates/QuizResult';
+import { PageNotFound } from './templates/PageNotFound';
 
 export const routes = createBrowserRouter([
   {
@@ -75,5 +76,9 @@ export const routes = createBrowserRouter([
         </QuizDataProvider>
       </RequireAuth>
     ),
+  },
+  {
+    path: '*',
+    element: <PageNotFound />,
   },
 ]);
