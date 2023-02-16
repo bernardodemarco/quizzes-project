@@ -7,6 +7,9 @@ import { PageContainer } from '../../components/PageContainer';
 import { QuizNotFound } from '../../components/QuizNotFound';
 import { QuizzesContainer } from '../../components/QuizzesContainer';
 
+// templates
+import { Loading } from './../Loading';
+
 // API
 import { axiosConfig } from '../../utils/axiosConfig';
 import { mapQuizzes } from './../../api/mapQuizzes';
@@ -46,7 +49,7 @@ export const Home = () => {
   }
 
   if (quizzes.length === 0) {
-    return <h1>Loading</h1>;
+    return <Loading />;
   }
 
   const filteredQuizzes = quizzes.filter((quiz) => {

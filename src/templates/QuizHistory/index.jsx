@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { HistoryNav } from '../../components/HistoryNav';
 import { PageContainer } from '../../components/PageContainer';
 import { QuizzesContainer } from '../../components/QuizzesContainer';
+import { Loading } from '../Loading';
 
 import { axiosConfig } from '../../utils/axiosConfig';
 import { mapQuizzes } from './../../api/mapQuizzes';
@@ -36,7 +37,7 @@ export const QuizHistory = () => {
   }
 
   if (quizzes.length === 0) {
-    return <h1>Loading</h1>;
+    return <Loading />;
   }
 
   return (

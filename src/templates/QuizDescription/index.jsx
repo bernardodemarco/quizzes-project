@@ -12,6 +12,7 @@ import { Heading } from './../../components/Heading';
 import { QuizDifficulty } from './../../components/QuizDifficulty';
 import { TextComponent } from './../../components/TextComponent';
 import { Button } from './../../components/Button';
+import { Loading } from '../Loading';
 
 import { axiosConfig } from '../../utils/axiosConfig';
 import { mapQuiz } from '../../api/mapQuiz';
@@ -60,7 +61,7 @@ export const QuizDescription = () => {
   }
 
   if (Object.keys(quiz).length === 0) {
-    return <h1>loading</h1>;
+    return <Loading />;
   }
 
   return (

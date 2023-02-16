@@ -11,6 +11,7 @@ import { TextComponent } from './../../components/TextComponent';
 import { Heading } from './../../components/Heading';
 import { QuizQuestionOptions } from './../../components/QuizQuestionOptions';
 import { PageContainer } from './../../components/PageContainer';
+import { Loading } from '../Loading';
 
 export const QuizQuestions = () => {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ export const QuizQuestions = () => {
   }, [quizData.isActive, navigate, id]);
 
   if (!question) {
-    return <h1>loading</h1>;
+    return <Loading />;
   }
 
   return (
