@@ -1,48 +1,62 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import { Button } from '../Button';
 
-export const QuizQuestionOptions = ({
-  correctAnswerIndex,
-  answers,
-  onButtonClick,
-}) => {
+import { useQuizDataContext } from '../../hooks/useQuizDataContext';
+
+export const QuizQuestionOptions = ({ correctAnswerIndex, answers }) => {
   // finished state variable is a flag that controls if
   // the current question has finished or not
   const [finished, setFinished] = useState(false);
 
+  // optionRef.current represents the selected option
+  const optionRef = useRef(null);
+
+  const actions = useQuizDataContext()[1];
+
   const alphabeticalOrder = 'ABCDE';
 
-  const handleOptionClick = (e, correctAnswerIndex) => {
-    let selectedOption = e.target;
-    if (selectedOption.id === 'options-container' || finished) return;
+  const handleOptionClick = (e) => {
+    optionRef.current = e.target;
+    if (optionRef.current.id === 'options-container' || finished) return;
 
-    // set selectedOption to be OptionWrapper, not RadioInput/Label/span
+    // set selected option to be OptionWrapper, not RadioInput/Label/span
     if (
-      selectedOption.tagName === 'INPUT' ||
-      selectedOption.tagName === 'LABEL'
+      optionRef.current.tagName === 'INPUT' ||
+      optionRef.current.tagName === 'LABEL'
     ) {
-      selectedOption = selectedOption.parentElement;
-    } else if (selectedOption.tagName === 'SPAN') {
-      selectedOption = selectedOption.parentElement.parentElement;
+      optionRef.current = optionRef.current.parentElement;
+    } else if (optionRef.current.tagName === 'SPAN') {
+      optionRef.current = optionRef.current.parentElement.parentElement;
     }
 
-    // style selected answer
-    if (parseInt(selectedOption.id) === correctAnswerIndex) {
-      selectedOption.classList.add('correct-answer');
+    // check if the answer is correct or incorrect
+    if (parseInt(optionRef.current.id) === correctAnswerIndex) {
+      optionRef.current.classList.add('correct-answer');
+      actions.incrementCorrectAnswers();
     } else {
-      selectedOption.classList.add('wrong-answer');
+      optionRef.current.classList.add('wrong-answer');
     }
-    setFinished(() => true);
+    setFinished(true);
+  };
+
+  const onButtonClick = () => {
+    if (optionRef.current.classList.contains('correct-answer')) {
+      optionRef.current.classList.remove('correct-answer');
+    } else if (optionRef.current.classList.contains('wrong-answer')) {
+      optionRef.current.classList.remove('wrong-answer');
+    }
+    setFinished(false);
+    actions.goToNextQuestion();
   };
 
   return (
     <Styled.OptionsContainer
       id="options-container"
-      onClick={(e) => handleOptionClick(e, correctAnswerIndex)}
+      onClick={handleOptionClick}
       finished={finished}
     >
       {answers.map((answer, ind) => {
@@ -69,5 +83,4 @@ export const QuizQuestionOptions = ({
 QuizQuestionOptions.propTypes = {
   correctAnswerIndex: P.number.isRequired,
   answers: P.arrayOf(P.string).isRequired,
-  onButtonClick: P.func.isRequired,
 };

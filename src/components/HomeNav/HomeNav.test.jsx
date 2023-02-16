@@ -38,6 +38,21 @@ describe('<HomeNav />', () => {
     expect(screen.queryByRole('list')).not.toBeInTheDocument();
   });
 
+  it('should allow dropdown items to be clicked', () => {
+    const func = jest.fn();
+    renderThemeProvider(
+      <Router>
+        <HomeNav username={username} onDropdownItemClick={func} />
+      </Router>,
+    );
+
+    fireEvent.click(screen.getByText('Temas'));
+
+    const list = screen.getByRole('list');
+
+    fireEvent.click(list.firstChild.firstChild);
+  });
+
   it('when using mobile devices, it should apply the styles accordingly', () => {
     renderThemeProvider(
       <Router>

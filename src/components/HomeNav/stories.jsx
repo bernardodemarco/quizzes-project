@@ -1,4 +1,5 @@
 import { HomeNav } from '.';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 export default {
   title: 'HomeNav',
@@ -11,4 +12,8 @@ export default {
   },
 };
 
-export const Template = (args) => <HomeNav {...args} />;
+export const Template = (args) => (
+  <Router>
+    <HomeNav {...args} />
+  </Router>
+);

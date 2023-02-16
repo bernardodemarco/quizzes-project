@@ -2,6 +2,13 @@
 
 Quizzes project from Pixel
 
+## Remaining tasks
+
+- Map API data
+- Get data from API
+- Add loading component
+- Add padding to small devices
+
 ## Components
 
 - Heading ok
@@ -26,16 +33,16 @@ Quizzes project from Pixel
 - Login ok
 - SignUp ok
 - RecoverPassword ok
-- Home ok + get data from API
-- QuizHistory ok + get data from API
-- QuizDescription ok + get data from API + integrate w/ quiz context
-- QuizQuestion finish styles and integration with quiz context
-- QuizResults (...)
+- Home ok
+- QuizHistory ok
+- QuizDescription ok
+- QuizQuestions ok
+- QuizResult ok
 
 ## Contexts
 
 - AuthProvider ok
-- QuizzesProvider ok + get data from API
+- QuizDataProvider ok
 
 ## Hooks
 

@@ -3,6 +3,21 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${() => css`
     width: 55.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 10rem 0 12rem 0;
+  `}
+`;
+
+export const TextContainer = styled.div`
+  ${() => css`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
   `}
 `;
 

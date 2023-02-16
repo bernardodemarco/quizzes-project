@@ -77,6 +77,18 @@ exports[`<HistoryNav /> should match snapshot 1`] = `
 }
 
 @media (max-width:974px) {
+  .c2 {
+    left: 5rem;
+  }
+}
+
+@media (max-width:660px) {
+  .c2 {
+    left: 1rem;
+  }
+}
+
+@media (max-width:660px) {
   .c0 .c1 {
     left: 5rem;
   }
@@ -98,7 +110,7 @@ exports[`<HistoryNav /> should match snapshot 1`] = `
     <img
       alt="Return button"
       class="c3"
-      src="assets/images/back-icon.svg"
+      src="/assets/images/back-icon.svg"
     />
   </div>
   <div

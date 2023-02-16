@@ -64,6 +64,12 @@ describe('<QuizNotFound />', () => {
         width: 50rem;
       }
 
+      @media (max-width:785px) {
+        .c0 {
+          margin-top: 0;
+        }
+      }
+
       <div
         class="c0"
       >

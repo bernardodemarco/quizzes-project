@@ -27,7 +27,7 @@ export const HomeNav = ({
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
   const handleDropdownItemClick = (e) => {
-    const queryValue = e.target.innerText.slice(1);
+    const queryValue = e.target.textContent.slice(1);
     onDropdownItemClick(queryValue);
     inputRef.current.value = queryValue;
   };

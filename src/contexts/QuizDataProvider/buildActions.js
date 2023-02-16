@@ -20,13 +20,20 @@ export const buildActions = (dispatch) => {
       dispatch({ type: actionTypes.INCREMENT_CORRECT_ANSWERS });
     },
     setQuestions: async () => {
-      return dispatch({
-        type: actionTypes.SET_QUESTIONS,
-        payload: { questions: fakeQuestions },
-      });
+      dispatch({ type: actionTypes.LOADING_QUESTIONS });
+
+      return () => {
+        dispatch({
+          type: actionTypes.SET_QUESTIONS,
+          payload: { questions: fakeQuestions },
+        });
+      };
     },
     goToNextQuestion: () => {
       dispatch({ type: actionTypes.GO_TO_NEXT_QUESTION });
+    },
+    restartQuiz: () => {
+      dispatch({ type: actionTypes.RESTART_QUIZ });
     },
   };
 };

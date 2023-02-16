@@ -1,6 +1,7 @@
 import { QuizzesContainer } from '.';
 import { PageContainer } from './../PageContainer';
 import { notAnsweredQuizzes, answeredQuizzes } from './mock';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 export default {
   title: 'QuizzesContainer',
@@ -11,15 +12,19 @@ export default {
 };
 
 export const NotAnsweredQuizzesGrid = (args) => (
-  <PageContainer>
-    <QuizzesContainer {...args} />
-  </PageContainer>
+  <Router>
+    <PageContainer>
+      <QuizzesContainer {...args} />
+    </PageContainer>
+  </Router>
 );
 
 export const AnsweredQuizzesGrid = (args) => (
-  <PageContainer>
-    <QuizzesContainer {...args} />
-  </PageContainer>
+  <Router>
+    <PageContainer>
+      <QuizzesContainer {...args} />
+    </PageContainer>
+  </Router>
 );
 AnsweredQuizzesGrid.args = {
   quizzes: answeredQuizzes,

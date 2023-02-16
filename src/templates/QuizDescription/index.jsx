@@ -1,8 +1,8 @@
 import * as Styled from './styles';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 
 import { useQuizDataContext } from './../../hooks/useQuizDataContext';
 
@@ -16,15 +16,25 @@ import { Button } from './../../components/Button';
 import defaultQuiz from './mock';
 
 export const QuizDescription = () => {
-  const [, actions] = useQuizDataContext();
-  const navigate = useNavigate();
+  const actions = useQuizDataContext()[1];
+
   const { id } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
+
   // eslint-disable-next-line
   const [quiz, setQuiz] = useState(defaultQuiz);
 
+  useEffect(() => {
+    if (location.state === 'restartQuiz') {
+      actions.restartQuiz();
+    }
+  }, [location, actions]);
+
   const handleButtonClick = () => {
+    // change here
     actions.activateQuiz();
-    actions.setNumOfQuestions(quiz.numOfQuestions);
+    actions.setNumOfQuestions(3);
     navigate(`/quizzes/${id}/questions`);
   };
 

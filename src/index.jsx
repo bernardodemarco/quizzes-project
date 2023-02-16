@@ -1,4 +1,4 @@
-// react.js
+// react
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
@@ -11,7 +11,7 @@ import { theme } from './styles/theme';
 import { routes } from './routes';
 import { RouterProvider } from 'react-router-dom';
 
-// components
+// contexts
 import { AuthProvider } from './contexts/AuthProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -34,13 +34,25 @@ describe('<ReturnButton />', () => {
         height: 100%;
       }
 
+      @media (max-width:974px) {
+        .c0 {
+          left: 5rem;
+        }
+      }
+
+      @media (max-width:660px) {
+        .c0 {
+          left: 1rem;
+        }
+      }
+
       <div
         class="c0"
       >
         <img
           alt="Return button"
           class="c1"
-          src="assets/images/back-icon.svg"
+          src="/assets/images/back-icon.svg"
         />
       </div>
     `);

@@ -1,13 +1,17 @@
 import { renderThemeProvider } from './../../styles/render-theme-provider';
 import { fireEvent, screen } from '@testing-library/react';
 
+import { QuizDataProvider } from '../../contexts/QuizDataProvider';
 import { QuizQuestionOptions } from '.';
 import data from './mock';
 
 describe('<QuizQuestionOptions />', () => {
   it('should render <QuizQuestionOptions /> correctly', () => {
-    const func = jest.fn();
-    renderThemeProvider(<QuizQuestionOptions {...data} onButtonClick={func} />);
+    renderThemeProvider(
+      <QuizDataProvider>
+        <QuizQuestionOptions {...data} />
+      </QuizDataProvider>,
+    );
 
     expect(screen.getAllByRole('radio', { hidden: true })).toHaveLength(
       data.answers.length,
@@ -19,8 +23,11 @@ describe('<QuizQuestionOptions />', () => {
   });
 
   it('should apply the correct styles when the wrong option has been chosen', () => {
-    const func = jest.fn();
-    renderThemeProvider(<QuizQuestionOptions {...data} onButtonClick={func} />);
+    renderThemeProvider(
+      <QuizDataProvider>
+        <QuizQuestionOptions {...data} />
+      </QuizDataProvider>,
+    );
 
     const radios = screen.getAllByRole('radio', { hidden: true });
     const optionWrappers = radios.map((radio) => {
@@ -58,11 +65,17 @@ describe('<QuizQuestionOptions />', () => {
     expect(
       screen.queryByRole('button', { name: 'Continuar' }),
     ).toBeInTheDocument();
+
+    fireEvent.click(screen.queryByRole('button', { name: 'Continuar' }));
+    expect(selectedElement).toHaveAttribute('class', initialClassName);
   });
 
   it('should apply the correct styles when the correct option has been chosen', () => {
-    const func = jest.fn();
-    renderThemeProvider(<QuizQuestionOptions {...data} onButtonClick={func} />);
+    renderThemeProvider(
+      <QuizDataProvider>
+        <QuizQuestionOptions {...data} />
+      </QuizDataProvider>,
+    );
 
     const radios = screen.getAllByRole('radio', { hidden: true });
     const optionWrappers = radios.map((radio) => {
@@ -78,11 +91,17 @@ describe('<QuizQuestionOptions />', () => {
       'class',
       initialClassName + ' correct-answer',
     );
+
+    fireEvent.click(screen.queryByRole('button', { name: 'Continuar' }));
+    expect(selectedElement).toHaveAttribute('class', initialClassName);
   });
 
   it('should change class attribute in OptionWrapper if input or label were clicked', () => {
-    const func = jest.fn();
-    renderThemeProvider(<QuizQuestionOptions {...data} onButtonClick={func} />);
+    renderThemeProvider(
+      <QuizDataProvider>
+        <QuizQuestionOptions {...data} />
+      </QuizDataProvider>,
+    );
 
     const radios = screen.getAllByRole('radio', { hidden: true });
 
@@ -101,8 +120,11 @@ describe('<QuizQuestionOptions />', () => {
   });
 
   it('should change class attribute in OptionWrapper if span was clicked', () => {
-    const func = jest.fn();
-    renderThemeProvider(<QuizQuestionOptions {...data} onButtonClick={func} />);
+    renderThemeProvider(
+      <QuizDataProvider>
+        <QuizQuestionOptions {...data} />
+      </QuizDataProvider>,
+    );
 
     const radios = screen.getAllByRole('radio', { hidden: true });
 
@@ -121,9 +143,10 @@ describe('<QuizQuestionOptions />', () => {
   });
 
   it('should match snapshot', () => {
-    const func = jest.fn();
     const { container } = renderThemeProvider(
-      <QuizQuestionOptions {...data} onButtonClick={func} />,
+      <QuizDataProvider>
+        <QuizQuestionOptions {...data} />
+      </QuizDataProvider>,
     );
     expect(container).toMatchSnapshot();
   });

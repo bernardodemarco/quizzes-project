@@ -4,6 +4,9 @@ import { createBrowserRouter } from 'react-router-dom';
 // components
 import { RequireAuth } from './components/RequireAuth';
 
+// contexts
+import { QuizDataProvider } from './contexts/QuizDataProvider';
+
 // templates
 import { Login } from './templates/Login';
 import { SignUp } from './templates/SignUp';
@@ -12,8 +15,7 @@ import { Home } from './templates/Home';
 import { QuizHistory } from './templates/QuizHistory';
 import { QuizDescription } from './templates/QuizDescription';
 import { QuizQuestions } from './templates/QuizQuestions';
-
-import { QuizDataProvider } from './contexts/QuizDataProvider';
+import { QuizResult } from './templates/QuizResult';
 
 export const routes = createBrowserRouter([
   {
@@ -60,6 +62,16 @@ export const routes = createBrowserRouter([
       <RequireAuth>
         <QuizDataProvider>
           <QuizQuestions />
+        </QuizDataProvider>
+      </RequireAuth>
+    ),
+  },
+  {
+    path: '/quizzes/:id/result',
+    element: (
+      <RequireAuth>
+        <QuizDataProvider>
+          <QuizResult />
         </QuizDataProvider>
       </RequireAuth>
     ),

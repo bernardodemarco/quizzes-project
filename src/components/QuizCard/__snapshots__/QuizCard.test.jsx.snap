@@ -14,6 +14,10 @@ exports[`<QuizCard /> should match snapshot 1`] = `
   background-color: #FFFFFF;
 }
 
+.c0:hover {
+  cursor: default;
+}
+
 .c1 {
   position: relative;
   width: 100%;

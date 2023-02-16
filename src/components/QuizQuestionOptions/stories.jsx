@@ -1,21 +1,20 @@
 import { QuizQuestionOptions } from '.';
+import { QuizDataProvider } from '../../contexts/QuizDataProvider';
 import { PageContainer } from './../PageContainer';
 import data from './mock';
-
-const onClick = () => {
-  console.log('onButtonClick!');
-};
 
 export default {
   title: 'QuizQuestionOptions',
   component: QuizQuestionOptions,
-  args: { ...data, onButtonClick: onClick },
+  args: { ...data },
 };
 
 export const Template = (args) => (
   <PageContainer>
-    <div style={{ width: '55.3rem' }}>
-      <QuizQuestionOptions {...args} />
-    </div>
+    <QuizDataProvider>
+      <div style={{ width: '55.3rem' }}>
+        <QuizQuestionOptions {...args} />
+      </div>
+    </QuizDataProvider>
   </PageContainer>
 );
