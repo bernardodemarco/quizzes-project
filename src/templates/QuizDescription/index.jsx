@@ -2,7 +2,7 @@ import * as Styled from './styles';
 
 import { useState, useEffect } from 'react';
 
-import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { useQuizDataContext } from './../../hooks/useQuizDataContext';
 
@@ -13,6 +13,7 @@ import { QuizDifficulty } from './../../components/QuizDifficulty';
 import { TextComponent } from './../../components/TextComponent';
 import { Button } from './../../components/Button';
 import { Loading } from '../Loading';
+import { PageNotFound } from '../PageNotFound';
 
 import { axiosConfig } from '../../utils/axiosConfig';
 import { mapQuiz } from '../../api/mapQuiz';
@@ -22,11 +23,11 @@ export const QuizDescription = () => {
 
   const { id } = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
 
   const [quiz, setQuiz] = useState({});
 
   useEffect(() => {
+    actions.restartQuiz();
     const loadQuiz = async () => {
       try {
         const rawQuiz = await axiosConfig.get(`/quizzes/${id}`);
@@ -42,13 +43,7 @@ export const QuizDescription = () => {
     return () => {
       ignore = true;
     };
-  }, [id]);
-
-  useEffect(() => {
-    if (location.state === 'restartQuiz') {
-      actions.restartQuiz();
-    }
-  }, [location, actions]);
+  }, [id, actions]);
 
   const handleButtonClick = () => {
     actions.activateQuiz();
@@ -57,7 +52,7 @@ export const QuizDescription = () => {
   };
 
   if (quiz === null) {
-    return <h1>not found</h1>;
+    return <PageNotFound />;
   }
 
   if (Object.keys(quiz).length === 0) {

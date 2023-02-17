@@ -7,6 +7,10 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+
+    & h1 {
+      text-align: center;
+    }
   `}
 `;
 

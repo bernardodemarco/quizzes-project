@@ -8,8 +8,13 @@ Quizzes project from Pixel
 - Get data from API ok
 - Add loading component ok
 - Add 404 Page ok
-- Format Date
-- Add padding to small devices
+- Format Date ok
+- Change username name ok
+- review navigation ok
+- Add padding to small devices ok
+- number of results !
+- check API data with loaded data
+- check tests
 
 ## Components
 

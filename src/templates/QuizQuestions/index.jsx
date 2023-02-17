@@ -43,11 +43,7 @@ export const QuizQuestions = () => {
 
   return (
     <>
-      <ReturnButton
-        onReturnButtonClick={() =>
-          navigate(`/quizzes/${id}`, { state: 'restartQuiz' })
-        }
-      />
+      <ReturnButton onReturnButtonClick={() => navigate(`/quizzes/${id}`)} />
       <PageContainer>
         <Styled.Container>
           <Styled.TextContainer>

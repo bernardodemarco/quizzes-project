@@ -1,3 +1,5 @@
+import { formatDate } from './../utils/formatDate';
+
 export const mapQuiz = (quiz = {}) => {
   const {
     id = '',
@@ -20,12 +22,12 @@ export const mapQuiz = (quiz = {}) => {
     search,
     shortDescription,
     description,
-    date,
+    date: formatDate(date),
     imgSrc,
     numOfQuestions,
     difficulty,
     isAnswered,
-    answeredDate,
+    answeredDate: formatDate(answeredDate),
     numOfCorrectAnswers,
   };
 };

@@ -9,6 +9,7 @@ import { Loading } from '../Loading';
 
 import { axiosConfig } from '../../utils/axiosConfig';
 import { mapQuizzes } from './../../api/mapQuizzes';
+import { PageNotFound } from '../PageNotFound';
 
 export const QuizHistory = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ export const QuizHistory = () => {
   }, []);
 
   if (quizzes === null) {
-    return <h1>Error</h1>;
+    return <PageNotFound />;
   }
 
   if (quizzes.length === 0) {

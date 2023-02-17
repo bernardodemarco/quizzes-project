@@ -1,3 +1,4 @@
+import { formatDate } from '../utils/formatDate';
 import { mapQuiz } from './mapQuiz';
 import quizzes from './quizzes.json';
 
@@ -26,12 +27,12 @@ describe('mapQuiz', () => {
     expect(quiz.search).toBe(rawQuiz.search);
     expect(quiz.shortDescription).toBe(rawQuiz.short_description);
     expect(quiz.description).toBe(rawQuiz.description);
-    expect(quiz.date).toBe(rawQuiz.date);
+    expect(quiz.date).toBe(formatDate(rawQuiz.date));
     expect(quiz.imgSrc).toBe(rawQuiz.banner_image);
     expect(quiz.numOfQuestions).toBe(rawQuiz.questions_count);
     expect(quiz.difficulty).toBe(rawQuiz.difficulty);
     expect(quiz.isAnswered).toBe(rawQuiz.is_answered);
-    expect(quiz.answeredDate).toBe(rawQuiz.answered_date);
+    expect(quiz.answeredDate).toBe(formatDate(rawQuiz.answered_date));
     expect(quiz.numOfCorrectAnswers).toBe(rawQuiz.correct_answers_count);
   });
 });

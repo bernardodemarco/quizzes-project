@@ -9,6 +9,7 @@ import { QuizzesContainer } from '../../components/QuizzesContainer';
 
 // templates
 import { Loading } from './../Loading';
+import { PageNotFound } from './../PageNotFound';
 
 // API
 import { axiosConfig } from '../../utils/axiosConfig';
@@ -17,13 +18,20 @@ import { mapQuizzes } from './../../api/mapQuizzes';
 export const Home = () => {
   const [quizzes, setQuizzes] = useState([]);
   const [query, setQuery] = useState('');
+  const [username, setUsername] = useState('');
 
   useEffect(() => {
     const loadQuizzes = async () => {
       try {
-        const quizzes = await axiosConfig.get('/quizzes?is_answered=false');
+        const requests = [
+          axiosConfig.get('/quizzes?is_answered=false'),
+          axiosConfig.get('/profile'),
+        ];
+        const [quizzes, profile] = await Promise.all(requests);
+        !ignore && setUsername(profile.data.name);
         !ignore && setQuizzes(mapQuizzes(quizzes.data));
       } catch {
+        !ignore && setUsername(null);
         !ignore && setQuizzes(null);
       }
     };
@@ -44,11 +52,11 @@ export const Home = () => {
     setQuery(queryValue);
   };
 
-  if (quizzes === null) {
-    return <h1>not found</h1>;
+  if (quizzes === null || username === null) {
+    return <PageNotFound />;
   }
 
-  if (quizzes.length === 0) {
+  if (quizzes.length === 0 || username === '') {
     return <Loading />;
   }
 
@@ -59,7 +67,7 @@ export const Home = () => {
   return (
     <PageContainer isCentered={filteredQuizzes.length === 0}>
       <HomeNav
-        username="bernardo"
+        username={username}
         onSearchInputChange={onSearchInputChange}
         onDropdownItemClick={onDropdownItemClick}
       />
