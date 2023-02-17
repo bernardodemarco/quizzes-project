@@ -1,3 +1,6 @@
+// styles
+import * as Styled from './styles';
+
 // react-hooks
 import { useEffect, useState } from 'react';
 
@@ -71,14 +74,23 @@ export const Home = () => {
         onSearchInputChange={onSearchInputChange}
         onDropdownItemClick={onDropdownItemClick}
       />
-      {filteredQuizzes.length > 0 ? (
-        <QuizzesContainer quizzes={filteredQuizzes} />
-      ) : (
-        <QuizNotFound
-          title="Quiz não encontrado"
-          description="Não encontramos nenhum quiz. Tente procurar usando palavras chaves diferentes..."
-        />
-      )}
+      <Styled.Container hasMarginTop={filteredQuizzes.length > 0}>
+        {filteredQuizzes.length > 0 ? (
+          <QuizzesContainer
+            quizzes={filteredQuizzes}
+            numOfResults={
+              !!query && filteredQuizzes.length > 0
+                ? filteredQuizzes.length
+                : null
+            }
+          />
+        ) : (
+          <QuizNotFound
+            title="Quiz não encontrado"
+            description="Não encontramos nenhum quiz. Tente procurar usando palavras chaves diferentes..."
+          />
+        )}
+      </Styled.Container>
     </PageContainer>
   );
 };

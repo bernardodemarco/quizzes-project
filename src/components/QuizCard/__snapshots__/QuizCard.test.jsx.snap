@@ -15,7 +15,7 @@ exports[`<QuizCard /> should match snapshot 1`] = `
 }
 
 .c0:hover {
-  cursor: default;
+  cursor: pointer;
 }
 
 .c1 {

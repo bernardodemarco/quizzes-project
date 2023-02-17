@@ -1,6 +1,8 @@
 import * as Styled from './styles';
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+
+import { useEffect } from 'react';
 
 import { Button } from '../../components/Button';
 import { Heading } from '../../components/Heading';
@@ -12,6 +14,7 @@ import { useQuizDataContext } from '../../hooks/useQuizDataContext';
 export const QuizResult = () => {
   const quizData = useQuizDataContext()[0];
   const navigate = useNavigate();
+  const { id } = useParams();
 
   const headingFeedback =
     quizData.numOfQuestions === quizData.numOfCorrectAnswers
@@ -23,9 +26,15 @@ export const QuizResult = () => {
       ? 'Você concluiu o quiz com sucesso e acertou todas as perguntas. Você é realmente muito bom!'
       : 'Continue estudando e tentando, uma hora você vai gabaritar! Eu acredito em você!';
 
+  useEffect(() => {
+    if (quizData.numOfQuestions === 0 && quizData.numOfCorrectAnswers === 0) {
+      navigate(`/quizzes/${id}`);
+    }
+  }, [quizData, id, navigate]);
+
   return (
     <>
-      <ReturnButton onReturnButtonClick={() => navigate('/')} />
+      <ReturnButton onReturnButtonClick={() => navigate(`/quizzes/${id}`)} />
       <PageContainer>
         <Styled.Container>
           <Heading
@@ -57,7 +66,7 @@ export const QuizResult = () => {
               {descriptionFeedback}
             </TextComponent>
           </Styled.TextContainer>
-          <Button lineHeight="18px" onClick={() => navigate('/')}>
+          <Button lineHeight="18px" onClick={() => navigate(`/quizzes/${id}`)}>
             Finalizar
           </Button>
         </Styled.Container>

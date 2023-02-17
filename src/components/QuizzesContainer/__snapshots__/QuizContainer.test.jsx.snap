@@ -1,15 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<QuizzesContainer /> should match snapshot 1`] = `
-.c0 {
+.c1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  margin-top: 16.8rem;
-  margin-bottom: 4.8rem;
+  margin-top: 2.5rem;
 }
 
-.c1 {
+.c2 {
   overflow: hidden;
   border: 0.1rem solid #BEBAB3;
   border-radius: 0.8rem;
@@ -22,11 +21,11 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
   background-color: #FFFFFF;
 }
 
-.c1:hover {
+.c2:hover {
   cursor: pointer;
 }
 
-.c2 {
+.c3 {
   position: relative;
   width: 100%;
   height: 19.4rem;
@@ -36,7 +35,7 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
   background-size: cover;
 }
 
-.c7 {
+.c8 {
   position: relative;
   width: 100%;
   height: 19.4rem;
@@ -46,7 +45,7 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
   background-size: cover;
 }
 
-.c8 {
+.c9 {
   position: relative;
   width: 100%;
   height: 19.4rem;
@@ -56,7 +55,7 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
   background-size: cover;
 }
 
-.c4 {
+.c5 {
   width: 100%;
   padding: 1.6rem 1.6rem 0.8rem 1.6rem;
   display: -webkit-box;
@@ -73,7 +72,7 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
   gap: 0.4rem;
 }
 
-.c3 {
+.c4 {
   position: absolute;
   bottom: 0.8rem;
   right: 1.6rem;
@@ -87,7 +86,7 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
   line-height: 1.6rem;
 }
 
-.c9 {
+.c10 {
   position: absolute;
   bottom: 0.8rem;
   right: 1.6rem;
@@ -101,7 +100,7 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
   line-height: 1.6rem;
 }
 
-.c6 {
+.c7 {
   font-size: 1.4rem;
   font-weight: 400;
   color: #3C3A36;
@@ -109,7 +108,14 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
   line-height: 2.1rem;
 }
 
-.c5 {
+.c0 {
+  color: #3C3A36;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.c6 {
   color: #3C3A36;
   font-size: 2.4rem;
   font-weight: 500;
@@ -117,75 +123,82 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
 }
 
 @media (max-width:1200px) {
-  .c0 {
+  .c1 {
     gap: 2rem;
   }
 }
 
 @media (max-width:974px) {
-  .c0 {
+  .c1 {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
 }
 
 @media (max-width:785px) {
-  .c0 {
+  .c1 {
     margin-top: 5rem;
     margin-bottom: 5rem;
   }
 }
 
 @media (max-width:1200px) {
-  .c1 {
+  .c2 {
     width: 45rem;
   }
 }
 
 @media (max-width:974px) {
-  .c1 {
+  .c2 {
     width: 55.2rem;
   }
 }
 
 @media (max-width:575px) {
-  .c1 {
+  .c2 {
     width: 90vw;
   }
 
-  .c1 p {
+  .c2 p {
     text-align: start;
   }
 }
 
 <div>
-  <div
+  <h2
     class="c0"
+    font-size="xSmall"
+    font-weight="normal"
+  >
+     Resultados
+  </h2>
+  <div
+    class="c1"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2"
+        class="c3"
       >
         <span
-          class="c3"
+          class="c4"
         >
           easy
         </span>
       </div>
       <div
-        class="c4"
+        class="c5"
       >
         <h3
-          class="c5"
+          class="c6"
           font-size="small"
           font-weight="normal"
         >
           UI
         </h3>
         <p
-          class="c6"
+          class="c7"
           color="dark"
           font-size="medium"
           font-weight="light"
@@ -195,29 +208,29 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c7"
+        class="c8"
       >
         <span
-          class="c3"
+          class="c4"
         >
           easy
         </span>
       </div>
       <div
-        class="c4"
+        class="c5"
       >
         <h3
-          class="c5"
+          class="c6"
           font-size="small"
           font-weight="normal"
         >
           Conceitos básicos de HTML
         </h3>
         <p
-          class="c6"
+          class="c7"
           color="dark"
           font-size="medium"
           font-weight="light"
@@ -227,29 +240,29 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c8"
+        class="c9"
       >
         <span
-          class="c9"
+          class="c10"
         >
           hard
         </span>
       </div>
       <div
-        class="c4"
+        class="c5"
       >
         <h3
-          class="c5"
+          class="c6"
           font-size="small"
           font-weight="normal"
         >
           HTML avançado
         </h3>
         <p
-          class="c6"
+          class="c7"
           color="dark"
           font-size="medium"
           font-weight="light"
@@ -259,29 +272,29 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2"
+        class="c3"
       >
         <span
-          class="c3"
+          class="c4"
         >
           easy
         </span>
       </div>
       <div
-        class="c4"
+        class="c5"
       >
         <h3
-          class="c5"
+          class="c6"
           font-size="small"
           font-weight="normal"
         >
           UI
         </h3>
         <p
-          class="c6"
+          class="c7"
           color="dark"
           font-size="medium"
           font-weight="light"
@@ -291,29 +304,29 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c7"
+        class="c8"
       >
         <span
-          class="c3"
+          class="c4"
         >
           easy
         </span>
       </div>
       <div
-        class="c4"
+        class="c5"
       >
         <h3
-          class="c5"
+          class="c6"
           font-size="small"
           font-weight="normal"
         >
           Conceitos básicos de HTML
         </h3>
         <p
-          class="c6"
+          class="c7"
           color="dark"
           font-size="medium"
           font-weight="light"
@@ -323,29 +336,29 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c8"
+        class="c9"
       >
         <span
-          class="c9"
+          class="c10"
         >
           hard
         </span>
       </div>
       <div
-        class="c4"
+        class="c5"
       >
         <h3
-          class="c5"
+          class="c6"
           font-size="small"
           font-weight="normal"
         >
           HTML avançado
         </h3>
         <p
-          class="c6"
+          class="c7"
           color="dark"
           font-size="medium"
           font-weight="light"
@@ -355,29 +368,29 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c2"
+        class="c3"
       >
         <span
-          class="c3"
+          class="c4"
         >
           easy
         </span>
       </div>
       <div
-        class="c4"
+        class="c5"
       >
         <h3
-          class="c5"
+          class="c6"
           font-size="small"
           font-weight="normal"
         >
           UI
         </h3>
         <p
-          class="c6"
+          class="c7"
           color="dark"
           font-size="medium"
           font-weight="light"
@@ -387,29 +400,29 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c7"
+        class="c8"
       >
         <span
-          class="c3"
+          class="c4"
         >
           easy
         </span>
       </div>
       <div
-        class="c4"
+        class="c5"
       >
         <h3
-          class="c5"
+          class="c6"
           font-size="small"
           font-weight="normal"
         >
           Conceitos básicos de HTML
         </h3>
         <p
-          class="c6"
+          class="c7"
           color="dark"
           font-size="medium"
           font-weight="light"
@@ -419,29 +432,29 @@ exports[`<QuizzesContainer /> should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="c1"
+      class="c2"
     >
       <div
-        class="c8"
+        class="c9"
       >
         <span
-          class="c9"
+          class="c10"
         >
           hard
         </span>
       </div>
       <div
-        class="c4"
+        class="c5"
       >
         <h3
-          class="c5"
+          class="c6"
           font-size="small"
           font-weight="normal"
         >
           HTML avançado
         </h3>
         <p
-          class="c6"
+          class="c7"
           color="dark"
           font-size="medium"
           font-weight="light"

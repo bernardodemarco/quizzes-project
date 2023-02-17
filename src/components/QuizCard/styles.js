@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  ${({ theme, isAnswered }) => css`
+  ${({ theme }) => css`
     overflow: hidden;
 
     border: 0.1rem solid ${theme.colors.gray};
@@ -13,7 +13,7 @@ export const Container = styled.div`
     background-color: ${theme.colors.white};
 
     &:hover {
-      cursor: ${isAnswered ? 'default' : 'pointer'};
+      cursor: pointer;
     }
 
     @media ${theme.media.largeDevices} {

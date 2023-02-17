@@ -1,13 +1,26 @@
 import styled, { css } from 'styled-components';
 
 export const Grid = styled.div`
-  ${({ theme, isAnswered }) => css`
+  ${({ theme, isAnswered, numOfResults }) => css`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
 
-    margin-top: 16.8rem;
-    margin-bottom: 4.8rem;
+    ${
+      isAnswered &&
+      css`
+        margin-top: 16.8rem;
+        margin-bottom: 4.8rem;
+    `
+    }
+
+    ${
+      !isAnswered &&
+      numOfResults !== null &&
+      css`
+        margin-top: 2.5rem;
+      `
+    }
 
     @media ${theme.media.largeDevices} {
       gap: 2rem;

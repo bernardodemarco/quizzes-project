@@ -2,7 +2,7 @@ import * as Styled from './styles';
 
 import { useState, useEffect } from 'react';
 
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 import { useQuizDataContext } from './../../hooks/useQuizDataContext';
 
@@ -23,6 +23,7 @@ export const QuizDescription = () => {
 
   const { id } = useParams();
   const navigate = useNavigate();
+  const { state } = useLocation();
 
   const [quiz, setQuiz] = useState({});
 
@@ -61,7 +62,15 @@ export const QuizDescription = () => {
 
   return (
     <>
-      <ReturnButton onReturnButtonClick={() => navigate('/')} />
+      <ReturnButton
+        onReturnButtonClick={() => {
+          if (state === 'fromHistory') {
+            navigate('/history');
+          } else {
+            navigate('/');
+          }
+        }}
+      />
       <PageContainer>
         <Styled.Container>
           <Heading fontSize="large" lineHeight="42px">

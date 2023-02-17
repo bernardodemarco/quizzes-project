@@ -12,8 +12,8 @@ Quizzes project from Pixel
 - Change username name ok
 - review navigation ok
 - Add padding to small devices ok
-- number of results !
-- check API data with loaded data
+- number of results ok
+- check API data VS fetched data ok
 - check tests
 
 ## Components

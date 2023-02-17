@@ -9,7 +9,7 @@ describe('<QuizzesContainer />', () => {
   it('should render <QuizzesContainer /> with unanswered quizzes correctly', () => {
     renderThemeProvider(
       <Router>
-        <QuizzesContainer quizzes={notAnsweredQuizzes} />
+        <QuizzesContainer quizzes={notAnsweredQuizzes} numOfResults={null} />
       </Router>,
     );
     expect(screen.getAllByRole('heading')).toHaveLength(
