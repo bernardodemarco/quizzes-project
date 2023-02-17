@@ -14,7 +14,7 @@ Quizzes project from Pixel
 - Add padding to small devices ok
 - number of results ok
 - check API data VS fetched data ok
-- check tests
+- check tests ok
 
 ## Components
 
