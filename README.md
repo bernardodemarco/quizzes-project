@@ -2,7 +2,7 @@
 
 ![home-page-final-project](https://user-images.githubusercontent.com/115510880/222758402-043e4e61-04d1-4d92-ab91-bb710d0e3a06.png)
 
-This is my first React.js project. It was the final test of [Pixel's](https://ejpixel.com.br/) web development course, which focused entirely on front-end development. As such, ***there is no*** user authentication, and quiz results are not persistent
+This is my first React.js project. It was the final test of [Pixel's](https://ejpixel.com.br/) web development course, which focused entirely on front-end development. As such, ***there is no*** user authentication, and quiz results are not persistent.
 
 Working on this project allowed me to put into practice all the theory that I learned during [Pixel's](https://ejpixel.com.br/) trainee program.
 
@@ -14,7 +14,7 @@ This web application allows users to navigate through all of the existing quizze
 
 In addition to the quiz navigation, there is a search box for filtering quizzes and an option on the navigation bar called "Histórico" which allows users to view the quizzes they have already answered.
 
-It is extremely important to mention that the data for this web application was fetched from an API developed by ***[Pixel](https://ejpixel.com.br/)*** solely for this test. Additionally, the images and design were also provided by ***[Pixel](https://ejpixel.com.br/)***.
+It is extremely important to mention that the data for this web application was fetched from an API developed by ***[Pixel](https://ejpixel.com.br/)*** solely for this test. Additionally, the images and design were also provided by [Pixel](https://ejpixel.com.br/).
 
 ## 🛠 Built with
 
