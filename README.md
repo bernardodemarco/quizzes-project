@@ -14,7 +14,7 @@ This web application allows users to navigate through all of the existing quizze
 
 In addition to the quiz navigation, there is a search box for filtering quizzes and an option on the navigation bar called "Histórico" which allows users to view the quizzes they have already answered.
 
-It is extremely important to mention that the data for this web application was fetched from an API developed by ***[Pixel](https://ejpixel.com.br/)*** solely for this test. Additionally, the images and design were also provided by [Pixel](https://ejpixel.com.br/).
+It is extremely important to mention that the data for this web application was fetched from an API developed by [Pixel](https://ejpixel.com.br/) solely for this test. Additionally, the images and design were also provided by [Pixel](https://ejpixel.com.br/).
 
 ## 🛠 Built with
 
